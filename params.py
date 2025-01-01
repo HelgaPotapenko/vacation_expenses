@@ -12,12 +12,15 @@ from dataclasses import dataclass
 __all__ = ['db_name', 'log_file_name', 'log_format', 'logging', 
            'datetime', 'date', 
            'sqlite3', 
+           'json',
            'uuid', 
            'ABC', 
            'dataclass', 
-           'TypeVar']
+           'TypeVar',
+           'db_encoding']
 
-db_name = 'vacation_expenses_db.sqlite3'
+db_name = '../vacations.db'
+db_encoding = 'utf-8'
 
 log_file_name = f'{date.today()}.log'
 log_format = '[%(asctime)s] [%(levelname)s] %(message)s'

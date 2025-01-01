@@ -1,0 +1,22 @@
+[2025-01-01 21:01:18,596] [INFO] 3d34022f-d5eb-4117-a321-11fb6308d848: START creating object ExpenseItem
+[2025-01-01 21:01:18,596] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: object VacationValue "Зажопинск" created
+[2025-01-01 21:01:18,596] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: select id from vacations  where description = 'Зажопинск'
+[2025-01-01 21:01:18,597] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: object VacationValue enriched
+[2025-01-01 21:01:18,597] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: object ExpenseCategoryValue "еда" created
+[2025-01-01 21:01:18,597] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: select id from expense_categories  where expense_category_name = 'еда'
+[2025-01-01 21:01:18,602] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: object ExpenseCategoryValue enriched
+[2025-01-01 21:01:18,602] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: object PayerValue "Оля" created
+[2025-01-01 21:01:18,602] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: select id from payers  where payer_name = 'Оля'
+[2025-01-01 21:01:18,603] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: object PayerValue enriched
+[2025-01-01 21:01:18,603] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: object ExpenseItem "" created
+[2025-01-01 21:01:18,603] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: {'id': None, 'expense_date': datetime.date(2024, 12, 4), 'description': 'трата tfhjgcjhgjhc', 'vacation': {'id': 1, 'descr': 'Зажопинск'}, 'expense_category': {'id': 1, 'descr': 'еда'}, 'payer': {'id': 1, 'descr': 'Оля'}}
+[2025-01-01 21:01:18,603] [INFO] 3d34022f-d5eb-4117-a321-11fb6308d848: FINISH creating object ExpenseItem
+[2025-01-01 21:01:18,603] [INFO] 3d34022f-d5eb-4117-a321-11fb6308d848: START inserting expense data
+[2025-01-01 21:01:18,603] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: executing INSERT INTO expenses 
+                        (expense_date, vacation_id, expense_category_id, description, payer_id) 
+                        VALUES('2024-12-04', 1, 1, 'трата tfhjgcjhgjhc', 1);
+[2025-01-01 21:01:18,607] [INFO] 3d34022f-d5eb-4117-a321-11fb6308d848: FINISH inserting expense data
+[2025-01-01 21:01:18,608] [DEBUG] 3d34022f-d5eb-4117-a321-11fb6308d848: object ExpenseItem destroyd
+[2025-01-01 21:01:18,644] [INFO] db5b1b04-e71d-46f3-a394-52ef1ac44731: START creating object ExpenseItems
+[2025-01-01 21:01:18,644] [DEBUG] db5b1b04-e71d-46f3-a394-52ef1ac44731: executing SELECT id, expense_date, description, vacation, expense_category, payer from vw_expenses  where 1 = 1 order by id
+[2025-01-01 21:01:18,645] [INFO] db5b1b04-e71d-46f3-a394-52ef1ac44731: FINISH creating object ExpenseItems

@@ -33,3 +33,10 @@ constraint payer_id_fk foreign key(payer_id) references payers(id) ON UPDATE CAS
 constraint expense_category_id_fk foreign key(expense_category_id) references expense_categories(id) ON UPDATE CASCADE ON DELETE SET NULL, 
 constraint vacation_fk foreign key(vacation_id) references vacations(id) ON UPDATE CASCADE ON DELETE SET NULL
 );
+
+CREATE VIEW vw_expenses AS 
+SELECT e.id, e.expense_date, e.description, v.description as vacation, ec.expense_category_name as expense_category, p.payer_name as payer
+FROM expenses e
+join expense_categories ec on ec.id = e.expense_category_id
+join vacations v  on v.id  = e.vacation_id 
+join payers p on p.id = e.payer_id;
